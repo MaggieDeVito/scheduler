@@ -1,6 +1,7 @@
 import React from "react";
 import "components/InterviewerList.scss";
 import InterviewerListItem from "./InterviewerListItem";
+import DayListItem from "./DayListItem";
 
 export default function InterviewerList(props) {
   const mappedInterviewers = props.interviewers.map((interviewer) => {
@@ -10,7 +11,7 @@ export default function InterviewerList(props) {
         name={interviewer.name}
         avatar={interviewer.avatar}
         selected={interviewer.id === props.interviewer}
-        setInterviewer={props.setInterviewer}
+        setInterviewer={(event) => props.setInterviewer(interviewer.id)}
       />
     );
   });
