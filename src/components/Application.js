@@ -28,14 +28,9 @@ export default function Application(props) {
       appointments,
     });
 
-    return axios
-      .put(`/api/appointments/${id}`, appointment)
-      .then((res) => {
-        setState({ ...state, appointments });
-      })
-      .catch((err) => {
-        console.log("error", err);
-      });
+    return axios.put(`/api/appointments/${id}`, appointment).then((res) => {
+      setState({ ...state, appointments });
+    });
   }
 
   function cancelInterview(id) {
@@ -48,15 +43,9 @@ export default function Application(props) {
       [id]: appointment,
     };
 
-    return axios
-      .delete(`/api/appointments/${id}`)
-      .then((res) => {
-        setState({ ...state, appointments });
-      })
-      .catch((error) => {
-        setState({ ...state, appointments });
-        console.log(error);
-      });
+    return axios.delete(`/api/appointments/${id}`).then((res) => {
+      setState({ ...state, appointments });
+    });
   }
 
   const [state, setState] = useState({
