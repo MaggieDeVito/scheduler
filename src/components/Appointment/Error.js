@@ -1,4 +1,3 @@
-import { action } from "@storybook/addon-actions/dist/preview";
 import React from "react";
 
 export default function Error(props) {
